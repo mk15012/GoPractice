@@ -1,0 +1,55 @@
+http.port: 7000
+log.level: "error"
+
+# StatsD
+statsd:
+  endpoint: "scmstatsd.myntra.com:8125"
+  prefix: "accio"
+
+# Switch endpoint
+switch:
+  endPoint: "http://switch.myntra.com"
+  user: "accioservice"
+  apiKey: "accioservice@321"
+  password: "accioservice@321"
+  namespace : "accio_cms_fetch"
+  reloadIntervalSeconds: 30
+  defaultStoreId: "2297"
+
+# New Relic
+newrelic:
+  appName: "accio"
+  credentialName: "newrelic_accio"
+  licenseKey: "684f1f12cd063a46dbb2541147c9218e71ffNRALi"
+
+# Vault
+vault:
+  binary: "/usr/local/bin/keycli_linux_amd64"
+
+# Redis
+datastore:
+  mysql:
+
+
+# Prometheus
+prometheus:
+  enable: true
+  port: 8083
+
+# CMS Service
+cmsservice:
+  url: http://catalogservice.myntra.com/myntra-catalog-service
+  authorization: "Basic R2FuZ2FkaGFyfmdvd25vbGxhLnJlZGR5QG15bnRyYS5jb206IiI="
+
+airbusservice:
+  url: http://airbusv2.myntra.com
+  enabled: false
+  consumerAppName : ""
+
+abcatalogservice:
+  url: http://abcatalog.myntra.com/abcatalog/cmsToStyleService/
+  authorization: "Basic ZGVlcGlrYSBnaG9ka2l+ZGVlcGlrYS5naG9ka2k6IiI="
+
+defaultRLConfig:
+  rate: 1400
+  burst: 1400
