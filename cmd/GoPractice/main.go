@@ -3,7 +3,7 @@ package main
 import (
 	"GoPractice/config"
 	"GoPractice/controller"
-	"GoPractice/database"
+	"GoPractice/dao"
 	"GoPractice/manager"
 	"database/sql"
 	"fmt"
@@ -41,11 +41,11 @@ func main() {
 
 	routes := mux.NewRouter()
 
-	userDAO := database.NewUser(db)
+	userDAO := dao.NewUser(db)
 	userManager := manager.NewUserManager(userDAO, logger)
 	userController := controller.NewUserController(userManager, logger)
 
-	productDAO := database.NewProduct(db)
+	productDAO := dao.NewProduct(db)
 	productManager := manager.NewProductManager(productDAO, logger)
 	productController := controller.NewProductController(productManager, logger)
 

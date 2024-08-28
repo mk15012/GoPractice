@@ -1,18 +1,18 @@
 package manager
 
 import (
-	"GoPractice/database"
+	"GoPractice/dao"
 	"GoPractice/entry"
 	"GoPractice/models"
 	"github.com/sirupsen/logrus"
 )
 
 type UserManager struct {
-	DAO *database.User
+	DAO *dao.User
 	Log *logrus.Logger
 }
 
-func NewUserManager(dao *database.User, log *logrus.Logger) *UserManager {
+func NewUserManager(dao *dao.User, log *logrus.Logger) *UserManager {
 	return &UserManager{DAO: dao, Log: log}
 }
 
